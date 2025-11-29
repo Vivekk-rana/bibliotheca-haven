@@ -13,7 +13,16 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Playfair Display', 'serif'],
+        body: ['Nunito Sans', 'sans-serif'],
+      },
       colors: {
+        paper: "hsl(var(--paper))",
+        ink: "hsl(var(--ink))",
+        sepia: "hsl(var(--sepia))",
+        parchment: "hsl(var(--parchment))",
+        "warm-accent": "hsl(var(--warm-accent))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
