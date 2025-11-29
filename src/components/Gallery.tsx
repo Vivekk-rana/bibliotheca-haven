@@ -1,0 +1,45 @@
+import { Image as ImageIcon } from "lucide-react";
+
+const Gallery = () => {
+  const images = Array(6).fill(null).map((_, i) => ({
+    id: i + 1,
+    alt: `Literary Society event ${i + 1}`,
+  }));
+
+  return (
+    <section id="gallery" className="py-24 bg-parchment">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-ink mb-6">
+            Gallery
+          </h2>
+          <p className="font-body text-lg text-muted-foreground leading-relaxed">
+            Moments captured from our literary journey—events, celebrations, and the community we've built.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {images.map((image) => (
+            <div
+              key={image.id}
+              className="group aspect-[4/3] bg-muted rounded-lg overflow-hidden border border-border hover:border-sepia/30 transition-all shadow-sm hover:shadow-md cursor-pointer"
+            >
+              <div className="w-full h-full flex items-center justify-center relative">
+                <ImageIcon className="h-12 w-12 text-muted-foreground/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-sepia/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-8">
+          <p className="font-body text-sm text-muted-foreground">
+            More photos coming soon. Follow us on social media for updates!
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Gallery;
