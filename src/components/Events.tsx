@@ -1,9 +1,18 @@
-import { Calendar, Clock, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin, Sparkles, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "./ScrollReveal";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Events = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-70, 70]);
   const upcomingEvents = [
     {
       title: "Annual Literary Fest 2024",
@@ -39,8 +48,23 @@ const Events = () => {
   ];
 
   return (
-    <section id="events" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section ref={ref} id="events" className="py-24 bg-background relative overflow-hidden">
+      {/* Parallax decorative elements */}
+      <motion.div
+        className="absolute top-[15%] left-[8%] w-16 h-16 text-warm-accent/8"
+        style={{ y: y1 }}
+      >
+        <Sparkles className="w-full h-full" />
+      </motion.div>
+      
+      <motion.div
+        className="absolute top-2/3 right-[12%] w-14 h-14 text-sepia/10"
+        style={{ y: y2 }}
+      >
+        <Award className="w-full h-full" />
+      </motion.div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-ink mb-6">
             Events
