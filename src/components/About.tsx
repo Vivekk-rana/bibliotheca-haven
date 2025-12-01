@@ -1,8 +1,17 @@
-import { BookHeart, Users, Sparkles } from "lucide-react";
+import { BookHeart, Users, Sparkles, BookOpen, PenTool } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-50, 50]);
   const features = [
     {
       icon: BookHeart,
@@ -25,10 +34,11 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-parchment relative overflow-hidden">
-      {/* Decorative animated elements */}
+    <section ref={ref} id="about" className="py-24 bg-parchment relative overflow-hidden">
+      {/* Decorative animated elements with parallax */}
       <motion.div
         className="absolute top-20 left-10 w-32 h-32 bg-sepia/5 rounded-full blur-3xl"
+        style={{ y: y1 }}
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -37,12 +47,29 @@ const About = () => {
       />
       <motion.div
         className="absolute bottom-20 right-10 w-40 h-40 bg-warm-accent/5 rounded-full blur-3xl"
+        style={{ y: y2 }}
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.3, 0.5, 0.3],
         }}
         transition={{ duration: 10, repeat: Infinity }}
       />
+      
+      {/* Floating decorative book icon */}
+      <motion.div
+        className="absolute top-1/2 left-[5%] w-16 h-16 text-sepia/10"
+        style={{ y: y1 }}
+      >
+        <BookOpen className="w-full h-full" />
+      </motion.div>
+      
+      {/* Floating decorative quill icon */}
+      <motion.div
+        className="absolute top-1/3 right-[8%] w-12 h-12 text-warm-accent/10"
+        style={{ y: y2 }}
+      >
+        <PenTool className="w-full h-full" />
+      </motion.div>
       
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal>
