@@ -1,4 +1,6 @@
 import { Image as ImageIcon } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
+import { motion } from "framer-motion";
 
 const Gallery = () => {
   const images = Array(6).fill(null).map((_, i) => ({
@@ -19,16 +21,29 @@ const Gallery = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {images.map((image) => (
-            <div
-              key={image.id}
-              className="group aspect-[4/3] bg-muted rounded-lg overflow-hidden border border-border hover:border-sepia/30 transition-all shadow-sm hover:shadow-md cursor-pointer"
-            >
-              <div className="w-full h-full flex items-center justify-center relative">
-                <ImageIcon className="h-12 w-12 text-muted-foreground/30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-sepia/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-            </div>
+          {images.map((image, index) => (
+            <ScrollReveal key={image.id} delay={index * 0.1}>
+              <motion.div
+                className="group aspect-[4/3] bg-muted rounded-lg overflow-hidden border border-border hover:border-sepia/30 transition-all shadow-sm hover:shadow-md cursor-pointer"
+                whileHover={{ scale: 1.03, y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="w-full h-full flex items-center justify-center relative">
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <ImageIcon className="h-12 w-12 text-muted-foreground/30" />
+                  </motion.div>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-sepia/20 to-transparent"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
 
