@@ -1,20 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import AnimatedLogo from "./AnimatedLogo";
-import { useRef } from "react";
 
 const Hero = () => {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
-
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -23,19 +13,16 @@ const Hero = () => {
   };
 
   return (
-    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax */}
-      <motion.div 
-        className="absolute inset-0 z-0"
-        style={{ y, opacity }}
-      >
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Literary books and vintage atmosphere"
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
-      </motion.div>
+      </div>
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 py-32 text-center">

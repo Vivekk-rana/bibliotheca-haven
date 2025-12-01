@@ -1,17 +1,8 @@
-import { BookOpen, MessageCircle, Mic, PenTool, BookMarked, Award, Feather } from "lucide-react";
+import { BookOpen, MessageCircle, Mic, PenTool, BookMarked, Award } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const Activities = () => {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [80, -80]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-60, 60]);
   const activities = [
     {
       icon: BookOpen,
@@ -46,23 +37,8 @@ const Activities = () => {
   ];
 
   return (
-    <section ref={ref} id="activities" className="py-24 bg-background relative overflow-hidden">
-      {/* Parallax decorative elements */}
-      <motion.div
-        className="absolute top-1/4 right-[10%] w-20 h-20 text-sepia/8"
-        style={{ y: y1 }}
-      >
-        <Feather className="w-full h-full" />
-      </motion.div>
-      
-      <motion.div
-        className="absolute bottom-1/4 left-[5%] w-16 h-16 text-warm-accent/10"
-        style={{ y: y2 }}
-      >
-        <BookMarked className="w-full h-full" />
-      </motion.div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="activities" className="py-24 bg-background">
+      <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-ink mb-6">
             Our Activities

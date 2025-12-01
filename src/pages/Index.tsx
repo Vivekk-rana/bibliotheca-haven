@@ -8,12 +8,10 @@ import Gallery from "@/components/Gallery";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import FloatingLiteraryElements from "@/components/FloatingLiteraryElements";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <FloatingLiteraryElements />
       <Navbar />
       <Hero />
       <About />
