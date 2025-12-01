@@ -1,4 +1,6 @@
 import { User } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
+import { motion } from "framer-motion";
 
 const Team = () => {
   const team = [
@@ -25,21 +27,31 @@ const Team = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {team.map((member, index) => (
-            <div
-              key={index}
-              className="group bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border border-border"
-            >
-              <div className="aspect-square bg-muted flex items-center justify-center relative overflow-hidden">
-                <User className="h-20 w-20 text-muted-foreground/30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-sepia/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="font-display text-xl font-semibold text-ink mb-2">
-                  {member.name}
-                </h3>
-                <p className="font-body text-sm text-sepia font-medium">{member.role}</p>
-              </div>
-            </div>
+            <ScrollReveal key={index} delay={index * 0.1}>
+              <motion.div
+                className="group bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border border-border"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="aspect-square bg-muted flex items-center justify-center relative overflow-hidden">
+                  <motion.div whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.3 }}>
+                    <User className="h-20 w-20 text-muted-foreground/30" />
+                  </motion.div>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-sepia/10 to-transparent"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="font-display text-xl font-semibold text-ink mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="font-body text-sm text-sepia font-medium">{member.role}</p>
+                </div>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

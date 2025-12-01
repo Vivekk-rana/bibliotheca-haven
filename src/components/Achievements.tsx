@@ -1,4 +1,6 @@
 import { Trophy, Star, Users, BookOpen } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
+import { motion } from "framer-motion";
 
 const Achievements = () => {
   const stats = [
@@ -43,18 +45,32 @@ const Achievements = () => {
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div
-                key={index}
-                className="bg-card rounded-lg p-6 text-center border border-border shadow-sm"
-              >
-                <Icon className="h-8 w-8 text-sepia mx-auto mb-3" />
-                <div className="font-display text-3xl font-bold text-ink mb-1">
-                  {stat.value}
-                </div>
-                <div className="font-body text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <motion.div
+                  className="bg-card rounded-lg p-6 text-center border border-border shadow-sm"
+                  whileHover={{ y: -8, scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Icon className="h-8 w-8 text-sepia mx-auto mb-3" />
+                  </motion.div>
+                  <motion.div
+                    className="font-display text-3xl font-bold text-ink mb-1"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <div className="font-body text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              </ScrollReveal>
             );
           })}
         </div>
@@ -62,22 +78,29 @@ const Achievements = () => {
         {/* Highlights */}
         <div className="max-w-4xl mx-auto space-y-6">
           {highlights.map((highlight, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-lg p-6 border-l-4 border-sepia shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="font-display text-xl font-semibold text-ink">
-                  {highlight.title}
-                </h3>
-                <span className="font-body text-sm text-sepia font-medium bg-sepia/10 px-3 py-1 rounded-full">
-                  {highlight.year}
-                </span>
-              </div>
-              <p className="font-body text-muted-foreground leading-relaxed">
-                {highlight.description}
-              </p>
-            </div>
+            <ScrollReveal key={index} delay={index * 0.1}>
+              <motion.div
+                className="bg-card rounded-lg p-6 border-l-4 border-sepia shadow-sm hover:shadow-md transition-shadow"
+                whileHover={{ x: 5, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="font-display text-xl font-semibold text-ink">
+                    {highlight.title}
+                  </h3>
+                  <motion.span
+                    className="font-body text-sm text-sepia font-medium bg-sepia/10 px-3 py-1 rounded-full"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {highlight.year}
+                  </motion.span>
+                </div>
+                <p className="font-body text-muted-foreground leading-relaxed">
+                  {highlight.description}
+                </p>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
