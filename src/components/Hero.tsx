@@ -67,8 +67,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            A sanctuary for words, ideas, and creative minds. We celebrate literature,
-            foster thoughtful discussions, and nurture the art of expression.
+            VOX POPULI - Voice of the people
+            
           </motion.p>
 
           <motion.div

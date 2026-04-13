@@ -132,7 +132,7 @@ const Contact = () => {
                         href="mailto:literarysociety@bitsindri.ac.in"
                         className="font-body text-sm text-muted-foreground hover:text-sepia transition-colors"
                       >
-                        literarysociety@bitsindri.ac.in
+                        literarysocietybitsindri12@gmail.com
                       </a>
                     </div>
                   </motion.div>
@@ -144,6 +144,9 @@ const Contact = () => {
                     <MapPin className="h-5 w-5 text-sepia mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-body text-sm font-medium text-ink">Location</p>
+                      <p className="font-body text-sm text-muted-foreground">
+                        Electrical Department
+                      </p>
                       <p className="font-body text-sm text-muted-foreground">
                         BIT Sindri, Dhanbad, Jharkhand
                       </p>
@@ -202,7 +205,7 @@ const Contact = () => {
                 </p>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button variant="outline" className="w-full border-sepia text-sepia hover:bg-sepia/5 font-body">
-                    Membership Information
+                    Join Now
                   </Button>
                 </motion.div>
               </motion.div>

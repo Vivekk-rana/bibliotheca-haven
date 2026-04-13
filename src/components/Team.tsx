@@ -1,15 +1,88 @@
 import { User } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import { motion } from "framer-motion";
+import TeamCard from "./cards/TeamCard";
 
 const Team = () => {
   const team = [
-    { name: "Arjun Sharma", role: "President", image: null },
-    { name: "Priya Gupta", role: "Vice President", image: null },
-    { name: "Rahul Singh", role: "Secretary", image: null },
-    { name: "Anjali Verma", role: "Creative Head", image: null },
-    { name: "Vikram Kumar", role: "Event Coordinator", image: null },
-    { name: "Sneha Patel", role: "Social Media Manager", image: null },
+    {
+      name: "Shan Raj Gabriel Tigga",
+      batch: 2022,
+      role: "President",
+      imageUrl: "shan",
+    },
+    {
+      name: "Sunidhi Verma",
+      batch: 2022,
+      role: "Vice President",
+      imageUrl: "sunidhi",
+    },
+    {
+      name: "Swapnal Swami",
+      batch: 2022,
+      role: "Vice President",
+      imageUrl: "swapnal",
+    },
+    {
+      name: "Shivam Pandey",
+      batch: 2022,
+      role: "Secretary",
+      imageUrl: "shivam",
+    },
+    {
+      name: "Vivek Anand",
+      batch: 2022,
+      role: "Joint Secretary",
+      imageUrl: "vivek",
+    },
+    {
+      name: "Ravi Shankar Prasad",
+      batch: 2022,
+      role: "Treasurer",
+      imageUrl: "ravi",
+    },
+    {
+      name: "Aman Kumar Rajak",
+      batch: 2022,
+      role: "Joint Treasurer",
+      imageUrl: "aman",
+    },
+    {
+      name: "Vikash Kumar Singh",
+      batch: 2022,
+      role: "Technical Head",
+      imageUrl: "vikas",
+    },
+    {
+      name: "Nisha Kumari",
+      batch: 2022,
+      role: "Editor-in-Chief",
+      imageUrl: "nisha",
+    },
+    {
+      name: "Dona Bhattacharjee",
+      batch: 2022,
+      role: "Alumni In-Charge",
+      imageUrl: "dona",
+    },
+    {
+      name: "Anand Shreshtha",
+      batch: 2022,
+      role: "Media & Sponsorship Head",
+      imageUrl: "anand",
+    },
+    {
+      name: "Sahil Singh",
+      batch: 2022,
+      role: "Public Relations Officer",
+      imageUrl: "sahil",
+    },
+    {
+      name: "Monika Kumari",
+      batch: 2022,
+      role: "Public Relations Officer",
+      imageUrl: "monika",
+    },
   ];
 
   return (
@@ -20,38 +93,14 @@ const Team = () => {
             Our Team
           </h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            Meet the passionate individuals who guide our literary journey and bring our
-            vision to life.
+            Meet the passionate individuals who guide our journey and
+            bring our vision to life.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {team.map((member, index) => (
-            <ScrollReveal key={index} delay={index * 0.1}>
-              <motion.div
-                className="group bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border border-border"
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="aspect-square bg-muted flex items-center justify-center relative overflow-hidden">
-                  <motion.div whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.3 }}>
-                    <User className="h-20 w-20 text-muted-foreground/30" />
-                  </motion.div>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-sepia/10 to-transparent"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="font-display text-xl font-semibold text-ink mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="font-body text-sm text-sepia font-medium">{member.role}</p>
-                </div>
-              </motion.div>
-            </ScrollReveal>
+            <TeamCard key={index} member={member} index={index} />
           ))}
         </div>
       </div>

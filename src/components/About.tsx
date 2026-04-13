@@ -1,6 +1,7 @@
 import { BookHeart, Users, Sparkles } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import { motion } from "framer-motion";
+import AboutCard from "./cards/AboutCard";
 
 const About = () => {
   const features = [
@@ -43,7 +44,7 @@ const About = () => {
         }}
         transition={{ duration: 10, repeat: Infinity }}
       />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -63,39 +64,17 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              The Literary Society at BIT Sindri is more than just a club—it's a haven for
-              those who find solace in stories, power in poetry, and joy in the written word.
-              We bring together passionate minds to celebrate literature in all its forms.
+              The Literary Society at BIT Sindri is more than just a club—it's a
+              haven for those who find solace in stories, power in poetry, and
+              joy in the written word. We bring together passionate minds to
+              celebrate literature in all its forms.
             </motion.p>
           </div>
         </ScrollReveal>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <ScrollReveal key={index} delay={index * 0.15}>
-                <motion.div
-                  className="bg-card rounded-lg p-8 shadow-sm hover:shadow-md transition-all border border-border group"
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <motion.div
-                    className="bg-sepia/10 w-14 h-14 rounded-full flex items-center justify-center mb-6 group-hover:bg-sepia/20 transition-colors"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <Icon className="h-7 w-7 text-sepia" />
-                  </motion.div>
-                  <h3 className="font-display text-xl font-semibold text-ink mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </motion.div>
-              </ScrollReveal>
-            );
+            return <AboutCard key={index} feature={feature} index={index} />;
           })}
         </div>
       </div>

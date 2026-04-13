@@ -50,14 +50,14 @@ const Footer = () => {
                 BIT Sindri, Dhanbad, Jharkhand
               </p>
               <p className="font-body text-sm text-background/80 mt-2">
-                literarysociety@bitsindri.ac.in
+                literarysocietybitsindri12@gmail.com
               </p>
             </div>
           </div>
 
           <div className="border-t border-background/20 pt-8 text-center">
             <p className="font-body text-sm text-background/80 flex items-center justify-center gap-2">
-              Made with <Heart className="h-4 w-4 text-warm-accent" fill="currentColor" /> by Literary Society
+              Made with <Heart className="h-4 w-4 text-warm-accent" fill="currentColor" /> by Batch 2022
               <span className="mx-2">•</span>
               © {currentYear} BIT Sindri
             </p>

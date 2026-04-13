@@ -48,7 +48,8 @@ const Navbar = () => {
             }}
             className="flex items-center gap-2 text-ink hover:text-sepia transition-colors"
           >
-            <BookOpen className="h-6 w-6" />
+            <img className="h-10 w-10 sm:h-14 sm:w-14 drop-shadow-lg" src="/logo.png" alt="Literary Society Logo" />
+            {/* <BookOpen className="h-6 w-6" /> */}
             <span className="font-display text-xl font-semibold">Literary Society</span>
           </a>
 
