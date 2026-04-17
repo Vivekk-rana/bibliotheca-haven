@@ -87,7 +87,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+          <div className="md:hidden bg-background/95 backdrop-blur-sm h-screen mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
@@ -97,7 +97,7 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="text-sm font-body text-foreground hover:text-sepia transition-colors py-2"
+                  className="text-sm font-body text-center text-foreground hover:text-sepia transition-colors py-2"
                 >
                   {link.name}
                 </a>
