@@ -89,10 +89,10 @@ const Hero = () => {
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => scrollToSection("#about")}
+                onClick={() => window.open(`${window.location.origin}/assets/BROCHURE.pdf`, "_blank", )}
                 variant="outline"
                 size="lg"
-                className="border-sepia text-sepia hover:bg-sepia/5 font-body px-8 shadow-md hover:shadow-lg transition-shadow"
+                className="border-sepia hover:text-sepia/90 text-sepia hover:bg-sepia/5 font-body px-8 shadow-md hover:shadow-lg transition-shadow"
               >
                 Learn More
               </Button>

@@ -69,7 +69,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdUYlpqQubQUtDjHn8UdWaVh1esQt1j-i-EIFefyqtHzgoYhQ/viewform?pli=1", "_blank")}
               className="bg-sepia hover:bg-sepia/90 text-background font-body"
             >
               Join Us
@@ -103,7 +103,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button
-                onClick={() => scrollToSection("#contact")}
+                onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdUYlpqQubQUtDjHn8UdWaVh1esQt1j-i-EIFefyqtHzgoYhQ/viewform?pli=1", "_blank")}
                 className="bg-sepia hover:bg-sepia/90 text-background font-body w-full"
               >
                 Join Us

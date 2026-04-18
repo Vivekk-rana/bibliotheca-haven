@@ -32,7 +32,8 @@ const Contact = () => {
             Contact Us
           </h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            Have questions or want to join our literary community? We'd love to hear from you.
+            Have questions or want to join our literary community? We'd love to
+            hear from you.
           </p>
         </div>
 
@@ -51,13 +52,18 @@ const Contact = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                 >
-                  <label htmlFor="name" className="font-body text-sm font-medium text-ink mb-2 block">
+                  <label
+                    htmlFor="name"
+                    className="font-body text-sm font-medium text-ink mb-2 block"
+                  >
                     Name
                   </label>
                   <Input
                     id="name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                     className="font-body"
                   />
@@ -68,14 +74,19 @@ const Contact = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <label htmlFor="email" className="font-body text-sm font-medium text-ink mb-2 block">
+                  <label
+                    htmlFor="email"
+                    className="font-body text-sm font-medium text-ink mb-2 block"
+                  >
                     Email
                   </label>
                   <Input
                     id="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                     className="font-body"
                   />
@@ -86,20 +97,31 @@ const Contact = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <label htmlFor="message" className="font-body text-sm font-medium text-ink mb-2 block">
+                  <label
+                    htmlFor="message"
+                    className="font-body text-sm font-medium text-ink mb-2 block"
+                  >
                     Message
                   </label>
                   <Textarea
                     id="message"
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     required
                     rows={5}
                     className="font-body resize-none"
                   />
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button type="submit" className="w-full bg-sepia hover:bg-sepia/90 text-background font-body">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    type="submit"
+                    className="w-full bg-sepia hover:bg-sepia/90 text-background font-body"
+                  >
                     Send Message
                   </Button>
                 </motion.div>
@@ -127,7 +149,9 @@ const Contact = () => {
                   >
                     <Mail className="h-5 w-5 text-sepia mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-body text-sm font-medium text-ink">Email</p>
+                      <p className="font-body text-sm font-medium text-ink">
+                        Email
+                      </p>
                       <a
                         href="mailto:literarysociety@bitsindri.ac.in"
                         className="font-body text-sm text-muted-foreground hover:text-sepia transition-colors"
@@ -143,7 +167,9 @@ const Contact = () => {
                   >
                     <MapPin className="h-5 w-5 text-sepia mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-body text-sm font-medium text-ink">Location</p>
+                      <p className="font-body text-sm font-medium text-ink">
+                        Location
+                      </p>
                       <p className="font-body text-sm text-muted-foreground">
                         Electrical Department
                       </p>
@@ -200,11 +226,23 @@ const Contact = () => {
                   Join Our Community
                 </h4>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
-                  Become a member of the Literary Society and be part of a vibrant community
-                  that celebrates literature and creativity.
+                  Become a member of the Literary Society and be part of a
+                  vibrant community that celebrates literature and creativity.
                 </p>
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button variant="outline" className="w-full border-sepia text-sepia hover:bg-sepia/5 font-body">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    onClick={() =>
+                      window.open(
+                        "https://docs.google.com/forms/d/e/1FAIpQLSdUYlpqQubQUtDjHn8UdWaVh1esQt1j-i-EIFefyqtHzgoYhQ/viewform?pli=1",
+                        "_blank",
+                      )
+                    }
+                    variant="outline"
+                    className="w-full border-sepia text-sepia hover:bg-sepia/5 font-body"
+                  >
                     Join Now
                   </Button>
                 </motion.div>
