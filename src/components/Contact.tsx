@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -192,7 +192,7 @@ const Contact = () => {
                 </h3>
                 <div className="flex gap-4">
                   <motion.a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/ls_bit__"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-sepia/10 hover:bg-sepia/20 p-3 rounded-full transition-colors"
@@ -202,14 +202,14 @@ const Contact = () => {
                     <Instagram className="h-5 w-5 text-sepia" />
                   </motion.a>
                   <motion.a
-                    href="https://facebook.com"
+                    href="https://www.linkedin.com/company/lsbits/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-sepia/10 hover:bg-sepia/20 p-3 rounded-full transition-colors"
                     whileHover={{ scale: 1.1, rotate: -5 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Facebook className="h-5 w-5 text-sepia" />
+                    <Linkedin className="h-5 w-5 text-sepia" />
                   </motion.a>
                 </div>
               </motion.div>
