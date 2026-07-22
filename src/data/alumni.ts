@@ -18,157 +18,90 @@ export const BATCHES = [
   "2021-22",
 ] as const;
 
-export const alumni: Alumni[] = [
-  // 2025-26
-  {
-    id: "2526-1",
-    name: "Shan Raj Gabriel Tigga",
-    batch: "2025-26",
-    societyPosition: "President",
-    company: "Google",
-    designation: "Software Engineer",
-    image: "/team/2022/shan.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "shan@example.com",
-  },
-  {
-    id: "2526-2",
-    name: "Sunidhi Verma",
-    batch: "2025-26",
-    societyPosition: "Vice President",
-    company: "Microsoft",
-    designation: "Product Manager",
-    image: "/team/2022/sunidhi.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "sunidhi@example.com",
-  },
-  {
-    id: "2526-3",
-    name: "Shivam Pandey",
-    batch: "2025-26",
-    societyPosition: "Secretary",
-    company: "Amazon",
-    designation: "Data Analyst",
-    image: "/team/2022/shivam.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "shivam@example.com",
-  },
-
-  // 2024-25
-  {
-    id: "2425-1",
-    name: "Swapnal Swami",
-    batch: "2024-25",
-    societyPosition: "President",
-    company: "Deloitte",
-    designation: "Consultant",
-    image: "/team/2022/swapnal.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "swapnal@example.com",
-  },
-  {
-    id: "2425-2",
-    name: "Vivek Anand",
-    batch: "2024-25",
-    societyPosition: "Vice President",
-    company: "Infosys",
-    designation: "Software Engineer",
-    image: "/team/2022/vivek.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "vivek@example.com",
-  },
-  {
-    id: "2425-3",
-    name: "Nisha Kumari",
-    batch: "2024-25",
-    societyPosition: "Editor-in-Chief",
-    company: "Penguin Random House",
-    designation: "Editor",
-    image: "/team/2022/nisha.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "nisha@example.com",
-  },
-
-  // 2023-24
-  {
-    id: "2324-1",
-    name: "Ravi Shankar Prasad",
-    batch: "2023-24",
-    societyPosition: "Treasurer",
-    company: "TCS",
-    designation: "Systems Analyst",
-    image: "/team/2022/ravi.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "ravi@example.com",
-  },
-  {
-    id: "2324-2",
-    name: "Aman Kumar Rajak",
-    batch: "2023-24",
-    societyPosition: "Joint Treasurer",
-    company: "Wipro",
-    designation: "Business Analyst",
-    image: "/team/2022/aman.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "aman@example.com",
-  },
-  {
-    id: "2324-3",
-    name: "Dona Bhattacharjee",
-    batch: "2023-24",
-    societyPosition: "Alumni In-Charge",
-    company: "Accenture",
-    designation: "Associate Consultant",
-    image: "/team/2022/dona.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "dona@example.com",
-  },
-
-  // 2022-23
-  {
-    id: "2223-1",
-    name: "Vikash Kumar Singh",
-    batch: "2022-23",
-    societyPosition: "Technical Head",
-    company: "Adobe",
-    designation: "Software Engineer",
-    image: "/team/2022/vikas.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "vikash@example.com",
-  },
-  {
-    id: "2223-2",
-    name: "Anand Shreshtha",
-    batch: "2022-23",
-    societyPosition: "Media & Sponsorship Head",
-    company: "The Times of India",
-    designation: "Journalist",
-    image: "/team/2022/anand.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "anand@example.com",
-  },
-
-  // 2021-22
-  {
-    id: "2122-1",
-    name: "Sahil Singh",
-    batch: "2021-22",
-    societyPosition: "Public Relations Officer",
-    company: "HDFC Bank",
-    designation: "Relationship Manager",
-    image: "/team/2022/sahil.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "sahil@example.com",
-  },
-  {
-    id: "2122-2",
-    name: "Monika Kumari",
-    batch: "2021-22",
-    societyPosition: "Public Relations Officer",
-    company: "ICICI Bank",
-    designation: "Content Strategist",
-    image: "/team/2022/monika.jpeg",
-    linkedin: "https://linkedin.com",
-    email: "monika@example.com",
-  },
+const IMAGES = [
+  "shan", "sunidhi", "shivam", "swapnal", "vivek",
+  "nisha", "ravi", "aman", "dona", "vikas",
+  "anand", "sahil", "monika",
 ];
+
+const POSITIONS = [
+  "President",
+  "Vice President",
+  "Secretary",
+  "Joint Secretary",
+  "Treasurer",
+  "Editor-in-Chief",
+  "Technical Head",
+  "Media & Sponsorship Head",
+  "Alumni In-Charge",
+  "Public Relations Officer",
+  "Event Coordinator",
+  "Content Head",
+];
+
+const COMPANIES = [
+  { company: "Google", designation: "Software Engineer" },
+  { company: "Microsoft", designation: "Product Manager" },
+  { company: "Amazon", designation: "Data Analyst" },
+  { company: "Deloitte", designation: "Consultant" },
+  { company: "Infosys", designation: "Software Engineer" },
+  { company: "Penguin Random House", designation: "Editor" },
+  { company: "TCS", designation: "Systems Analyst" },
+  { company: "Wipro", designation: "Business Analyst" },
+  { company: "Accenture", designation: "Associate Consultant" },
+  { company: "Adobe", designation: "UX Designer" },
+  { company: "The Times of India", designation: "Journalist" },
+  { company: "HDFC Bank", designation: "Relationship Manager" },
+  { company: "ICICI Bank", designation: "Content Strategist" },
+  { company: "HarperCollins", designation: "Copy Editor" },
+  { company: "The Hindu", designation: "Sub-Editor" },
+];
+
+const NAMES_BY_BATCH: Record<string, string[]> = {
+  "2025-26": [
+    "Shan Raj Gabriel Tigga", "Sunidhi Verma", "Shivam Pandey", "Aarav Mehta",
+    "Ishita Sharma", "Rohan Gupta", "Priya Nair", "Kabir Sethi",
+    "Ananya Iyer", "Devansh Roy", "Meera Kapoor",
+  ],
+  "2024-25": [
+    "Swapnal Swami", "Vivek Anand", "Nisha Kumari", "Aditya Verma",
+    "Sanya Malhotra", "Kartik Joshi", "Tanya Chatterjee", "Rahul Sinha",
+    "Neha Agarwal", "Yash Raj", "Simran Kaur",
+  ],
+  "2023-24": [
+    "Ravi Shankar Prasad", "Aman Kumar Rajak", "Dona Bhattacharjee",
+    "Arjun Menon", "Pooja Rao", "Siddharth Bose", "Kritika Jain",
+    "Harsh Vardhan", "Ritika Das", "Nikhil Bhatt", "Aisha Khan",
+  ],
+  "2022-23": [
+    "Vikash Kumar Singh", "Anand Shreshtha", "Rhea Banerjee", "Manav Trivedi",
+    "Shreya Ghosh", "Aryan Chopra", "Divya Pillai", "Karan Malhotra",
+    "Sneha Reddy", "Vivaan Shah", "Tanvi Deshmukh",
+  ],
+  "2021-22": [
+    "Sahil Singh", "Monika Kumari", "Rajat Khanna", "Alisha Fernandes",
+    "Parth Goyal", "Nandini Saxena", "Ayaan Qureshi", "Kavya Ramesh",
+    "Dev Patel", "Ira Sen", "Mohit Yadav",
+  ],
+};
+
+export const alumni: Alumni[] = Object.entries(NAMES_BY_BATCH).flatMap(
+  ([batch, names]) =>
+    names.map((name, i) => {
+      const pos = POSITIONS[i % POSITIONS.length];
+      const job = COMPANIES[(i + batch.charCodeAt(2)) % COMPANIES.length];
+      const img = IMAGES[(i + batch.charCodeAt(3)) % IMAGES.length];
+      const slug = name.toLowerCase().replace(/[^a-z]+/g, ".");
+      return {
+        id: `${batch}-${i + 1}`,
+        name,
+        batch,
+        societyPosition: pos,
+        company: job.company,
+        designation: job.designation,
+        image: `/team/2022/${img}.jpeg`,
+        linkedin: "https://linkedin.com",
+        email: `${slug}@example.com`,
+      };
+    })
+);
