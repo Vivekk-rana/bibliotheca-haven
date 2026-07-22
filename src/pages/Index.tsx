@@ -5,7 +5,7 @@ import Activities from "@/components/Activities";
 import Team from "@/components/Team";
 import Events from "@/components/Events";
 import Gallery from "@/components/Gallery";
-import Achievements from "@/components/Achievements";
+import Alumni from "@/components/Alumni";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -19,7 +19,7 @@ const Index = () => {
       <Team />
       <Events />
       <Gallery />
-      <Achievements />
+      <Alumni />
       <Contact />
       <Footer />
     </div>
